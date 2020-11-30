@@ -18,13 +18,6 @@ function App() {
   const [isFavOn, setIsFavOn] = useState<boolean>(false);
 
   useEffect(() => {
-    // This is just to remind me the command for running the local server.
-    console.log('===========================');
-    console.log('json-server --watch db.json');
-    console.log('===========================');
-  }, []);
-
-  useEffect(() => {
     getProducts();
   }, [isFavOn]);
 
