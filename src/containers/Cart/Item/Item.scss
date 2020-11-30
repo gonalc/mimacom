@@ -1,0 +1,58 @@
+@import 'public/styles/colors';
+@import 'public/styles/css3-mixins';
+
+.Item {
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;  
+    height: 100px; 
+    margin: 10px;
+    background-color: $white;
+    transition: .3s ease-in-out;
+    @include box-shadow(0, 5px, 10px, rgba($black, .15));
+    &:hover {
+        @include box-shadow(0, 5px, 10px, rgba($black, .3));
+    }
+    .img-container {
+        width: 100px;
+        height: 100%;
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .middle-container {
+        box-sizing: border-box;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        p {
+            margin: 0;
+        }
+    }
+    .price-container {
+        box-sizing: border-box;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        p {
+            margin: 0;
+        }
+        .price {
+            color: $light-blue;
+        }
+        hr {
+            height: 1px;
+            width: 100%;
+            background-color: $purple;
+            border: none;
+            flex-shrink: 0;
+        }
+        .total-item-price {
+            color: $blue;
+        }
+    }
+}

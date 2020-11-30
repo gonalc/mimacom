@@ -1,0 +1,57 @@
+/* COLORS */
+$white:           #FFFFFF;
+$black:           #000000;
+$red:             #FF5C5C;
+$pink:            #FF49B6;
+$purple:          #9C27B0;
+$deep-purple:     #7E57C2;
+$indigo:          #3F51B5;
+$blue:            #2196F3;
+$light-blue:      #03A9F4;
+$cyan:            #00BCD4;
+$teal:            #009688;
+$dark-green:      #2E7D32;
+$green:           #4CAF50;
+$light-green:     #8BC34A;
+$lime:            #CDDC39;
+$yellow:          #FDD835;
+$amber:           #FFC107;
+$orange:          #FF9800;
+$deep-orange:     #FF8730;
+$brown:           #795548;
+$dark-gray:       #666666;
+$gray:            #c4c4c4;
+$light-gray:      #EBEBEB;
+$blue-gray:       #78909C;
+$transparent: rgba(255, 255, 255, 0);
+
+$colors: (
+    //                          normal: normal/dark version     gradient: light version
+    (color: 'white',            normal: $white,                 gradient: $white),
+    (color: 'black',            normal: $black,                 gradient: $black),
+    (color: 'red',              normal: $red,                   gradient: $deep-orange),
+    (color: 'pink',             normal: $pink,                  gradient: lighten($red, 10%)),
+    (color: 'purple',           normal: $purple,                gradient: $pink),
+    (color: 'deep-purple',      normal: $deep-purple,           gradient: $purple),
+    (color: 'indigo',           normal: $indigo,                gradient: $blue),
+    (color: 'blue',             normal: $blue,                  gradient: $light-blue),
+    (color: 'light-blue',       normal: $light-blue,            gradient: lighten($cyan, 10%)),
+    (color: 'cyan',             normal: $cyan,                  gradient: lighten($cyan, 10%)),
+    (color: 'teal',             normal: $teal,                  gradient: $light-green),
+    (color: 'dark-green',       normal: $dark-green,            gradient: $light-green),
+    (color: 'green',            normal: $green,                 gradient: $light-green),
+    (color: 'light-green',      normal: $light-green,           gradient: $lime),
+    (color: 'lime',             normal: $lime,                  gradient: $yellow),
+    (color: 'yellow',           normal: darken($yellow, 10%),   gradient: $yellow),
+    (color: 'amber',            normal: $amber,                 gradient: $yellow),
+    (color: 'orange',           normal: $orange,                gradient: $amber),
+    (color: 'deep-orange',      normal: $deep-orange,           gradient: $amber),
+    (color: 'brown',            normal: $brown,                 gradient: $red),
+    (color: 'gray',             normal: $gray,                  gradient: lighten($gray, 10%)),
+    (color: 'blue-gray',        normal: $blue-gray,             gradient: $blue),
+    (color: 'light-gray',       normal: $light-gray,            gradient: $light-gray),
+);
+
+@function color($color, $type: normal) {
+    @return map-get(map-get($colors, $color), $type);
+}

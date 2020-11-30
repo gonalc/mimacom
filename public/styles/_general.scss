@@ -1,0 +1,44 @@
+@import './colors';
+@import './css3-mixins';
+
+// General variables [these are exclusive]
+$break-mobile: 768px;
+$break-tablet: 1024px;
+
+// General styles
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.btn {
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+    border: none;
+    color: $white;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: box-shadow .3s ease-in-out;
+    @each $color in $colors {
+        &.#{map-get($color, color)} {
+            @include background-horizontal(map-get($color, gradient), map-get($color, normal));
+            @include box-shadow(0, 5px, 10px, rgba(map-get($color, normal), .15));
+            &:hover {
+                @include box-shadow(0, 5px, 10px, rgba(map-get($color, normal), .3));
+            }
+        }
+    }
+}
+
+::selection {
+    background-color: $deep-orange;
+    color: $white;
+}

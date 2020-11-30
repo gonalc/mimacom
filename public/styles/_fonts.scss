@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto+Condensed:wght@400;700&display=swap');
+
+$montserrat: 'Montserrat', sans-serif;
+$roboto: 'Roboto Condensed', sans-serif;
+
+$text-small: 10px;
+$text-normal: 16px;
+$text-medium: 24px;
+$text-large: 36px;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $roboto;
+}
+
+p,
+input,
+button,
+a,
+li {
+    font-family: $montserrat;
+}
+
+.text-small {
+    font-size: $text-small;
+}
+
+.text-normal {
+    font-size: $text-normal;
+}
+
+.text-medium {
+    font-size: $text-medium;
+}
+
+.text-large {
+    font-size: $text-large;
+}
+
+.bold {
+    font-weight: 500;
+}

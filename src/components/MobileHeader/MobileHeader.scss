@@ -1,0 +1,35 @@
+@import "public/styles/colors";
+
+.MobileHeader {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 300;
+    .arrow-back {
+        height: 100%;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.3s ease-in-out;
+        cursor: pointer;
+        svg {
+            font-size: 24px;
+            transition: color 0.3s ease-in-out;
+        }
+        &.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+        &:hover {
+            opacity: .7;
+        }
+    }
+    h1 {
+        margin: 0;
+    }
+}

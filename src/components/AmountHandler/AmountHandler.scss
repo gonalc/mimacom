@@ -1,0 +1,19 @@
+@import 'public/styles/colors';
+
+.AmountHandler {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $gray;
+    width: 60px;
+    border-radius: 5px;
+    .handler {
+        box-sizing: border-box;
+        padding: 0 5px;
+        cursor: pointer;
+        transition: opacity .3s ease-in-out;
+        &.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}

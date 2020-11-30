@@ -1,0 +1,76 @@
+@import 'public/styles/colors';
+@import 'public/styles/fonts';
+@import 'public/styles/css3-mixins';
+
+.ProductCard {
+    background-color: $white;
+    max-width: 150px;
+    width: 50%;
+    margin: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: box-shadow .3s ease-in-out;
+    @include box-shadow(0, 5px, 15px, rgba($black, .15));
+    &:hover {
+        @include box-shadow(0, 5px, 15px, rgba($black, .3));
+    }
+    .img-container {
+        position: relative;
+        .price-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $orange;
+            box-sizing: border-box;
+            padding: 5px;
+            border-bottom-left-radius: 5px;
+            p {
+                margin: 0;
+            }
+        }
+    }
+    .bottom-section {
+        box-sizing: border-box;
+        padding: 10px;
+        p {
+            margin: 0;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0;
+            .fav {
+                padding: 5px;
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+                &.favorite {
+                    color: $red;
+                }
+                &.no-favorite {
+                    color: $gray;
+                }
+                &:hover {
+                    opacity: .7;
+                }
+            }
+        }
+        .buy-button-container {
+            display: flex;
+            justify-content: center;
+            button {
+                background-color: $orange;
+                color: $white;
+                border-radius: 5px;
+                border: none;
+                padding: 5px 10px;
+                cursor: pointer;
+                &.disabled {
+                    pointer-events: none;
+                    background-color: $gray;
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}

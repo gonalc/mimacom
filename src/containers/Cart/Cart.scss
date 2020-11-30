@@ -1,0 +1,63 @@
+@import "public/styles/colors";
+@import "public/styles/general";
+@import "public/styles/css3-mixins";
+
+.Cart {
+    width: 100%;
+    max-width: 400px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: $light-gray;
+    height: 100vh;
+    padding-top: 50px;
+    box-sizing: border-box;
+    .handle-purchase {
+        .total-amount-container {
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 15px;
+            .label {
+                text-align: center;
+                width: 100%;
+            }
+            .total-amount {
+                color: $orange;
+            }
+        }
+        .payment-button {
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            padding: 0 15px;
+        }
+    }
+    .no-items-message {
+        box-sizing: border-box;
+        padding: 20px;
+        p {
+            text-align: center;
+        }
+    }
+    @media screen and (min-width: $break-tablet) {
+        height: calc(100vh - 70px);
+        top: 70px;
+        padding-top: 10px;
+        .handle-purchase {
+            .total-amount-container {
+                justify-content: center;
+                .label {
+                    width: auto;
+                    margin-right: 50px;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: $break-tablet) {
+    .spacer {
+        width: 400px;
+        flex-shrink: 0;
+    }
+}
