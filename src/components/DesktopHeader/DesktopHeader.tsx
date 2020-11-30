@@ -4,12 +4,12 @@ import React from 'react';
 import { COLORS } from '../../data';
 import './DesktopHeader.scss';
 
-type DesktopHeader = {
+type DesktopHeaderProps = {
     favOn: boolean;
     toggleFav: () => void;
 }
 
-const DesktopHeader = ({ favOn,toggleFav }: DesktopHeader) => {
+const DesktopHeader = ({ favOn,toggleFav }: DesktopHeaderProps) => {
     return (
         <div className='DesktopHeader'>
             <div
