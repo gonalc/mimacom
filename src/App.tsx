@@ -5,7 +5,7 @@ import Loader from './components/Loader/Loader';
 import MobileHeader from './components/MobileHeader/MobileHeader';
 import Cart from './containers/Cart/Cart';
 import Main from './containers/Main/Main';
-import { fetchFavoriteProducts, fetchGroceries } from './data';
+import { fetchGroceries } from './data';
 import useScreenSize from './hooks/screen-size';
 import { IProduct } from './models/product';
 
@@ -28,9 +28,7 @@ function App() {
   const getProducts = async () => {
     setLoading(true);
     try {
-      let result;
-      if (isFavOn) result = await fetchFavoriteProducts();
-      else result = await fetchGroceries();
+      const result = await fetchGroceries(isFavOn ? '?favorite=1' : '');
       setProducts(result);
     } catch (err) {
       console.error('Error fetching products: ', err);

@@ -2,8 +2,12 @@ import { get, patch } from './functions';
 
 export const apiUrl = 'http://localhost:3000/';
 
-export const fetchGroceries = () => get(`${apiUrl}grocery`);
-export const fetchFavoriteProducts = () => get(`${apiUrl}grocery?favorite=1`);
+/**
+ * Fetches the products from the database.
+ * @param query {String} Query for custom requests.
+ * @example fetchGroceries('?favorite=1') => Favorite products array.
+ */
+export const fetchGroceries = (query = '') => get(`${apiUrl}grocery${query}`);
 export const updateProduct = (id: string, data: {}) => patch(`${apiUrl}grocery/${id}`, data);
 
 // Helper objects and constants
